@@ -274,6 +274,12 @@ private void EffectHandler(ObjectData data){
 <br>
 <br>
 
+# ライセンス
+
+All programs and document of VRecProject are released under [the MIT License](License.txt).
+
+VRecProjectに含まれるすべてのプログラム・ドキュメントなどはMITライセンスのもとで公開されています
+
 お困りの場合は以下までご連絡ください
 
 ---
