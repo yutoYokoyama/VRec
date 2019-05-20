@@ -1,4 +1,4 @@
-<<[top](VRec.html)
+<<[top](VRec.md)
 # VRecFilePathHelper
 namespace:VRec/static class
 

@@ -1,4 +1,4 @@
-﻿<<[top](VRec.html)
+﻿<<[top](VRec.md)
 # VViewerScript
 namespace:VRec/class/継承:MonoBehaviour
 
@@ -17,7 +17,7 @@ namespace:VRec/class/継承:MonoBehaviour
 |FileName|ファイル名|
 |ViewStarted|再生が開始したかどうか。読み取り専用|
 |ViewObjs|再生時に操作されるオブジェクト群のリスト。読み取り専用|
-|Objs|読み込んだ全ての再生用のデータ。読み取り専用。詳しくは[VRecRecordData](VRecRecordData.html)を参照|
+|Objs|読み込んだ全ての再生用のデータ。読み取り専用。詳しくは[VRecRecordData](VRecRecordData.md)を参照|
 |IsLoop|ループするか否か|
 |ViewingTime|再生が始まってから何秒経ったか。読み取り専用|
 |ViewIndex|再生されているデータのIndex。読み取り専用|
@@ -41,18 +41,18 @@ namespace:VRec/class/継承:MonoBehaviour
 
 |変数名|詳細|
 |:-----------|:------------|
-|OtherObjectSetting|ObjTypeがOtherのときに呼ばれるDelegate。引数は[VRecEventData](VRecEventData.html)のみ|
+|OtherObjectSetting|ObjTypeがOtherのときに呼ばれるDelegate。引数は[VRecEventData](VRecEventData.md)のみ|
 |VRecHandler|ObjTypeがVRecのときに呼ばれるDelegate。引数はVRecEventDataのみ|
 |ActivateHandler|ObjTypeがActivateSetのときに呼ばれるDelegate。引数はVRecEventDataのみ|
 |AudioHandler|ObjTypeがAudioのときに呼ばれるDelegate。引数はVRecEventDataのみ|
-|上記のDelegateに関しての詳細は[ObjectDataSettingHandler](ObjectDataSettingHandler.html)を参照||
+|上記のDelegateに関しての詳細は[ObjectDataSettingHandler](ObjectDataSettingHandler.md)を参照||
 |AvatarDataHandler|ObjTypeがAvatarのときに呼ばれるDelegate。引数はVRecEventDataと、対象のオブジェクト|
 |ModelDataHandler|ObjTypeがModelのときに呼ばれるDelegate。引数はVRecEventDataと、対象のオブジェクト|
 |StaticHandler|ObjTypeがStaticObjectのときに呼ばれるDelegate。引数はVRecEventDataと、対象のオブジェクト|
-|上記のDelegateに関しての詳細は[VRecObjectSettingHandler](VRecObjectSettingHandler.html)を参照||
+|上記のDelegateに関しての詳細は[VRecObjectSettingHandler](VRecObjectSettingHandler.md)を参照||
 |OnStartHandler|再生が開始したときに呼ばれるDelegate。引数は、VViewerScriptを持つTransformと再生するファイル名|
 |OnEndHandler|再生が終端まで到達したときに呼ばれるDelegate。引数は、VViewerScriptを持つTransformと再生するファイル名|
-|上記のDelegateに関しての詳細は[VViewerHandler](VViewerHandler.html)を参照||
+|上記のDelegateに関しての詳細は[VViewerHandler](VViewerHandler.md)を参照||
 |||
 <br>
 

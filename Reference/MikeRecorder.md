@@ -1,4 +1,4 @@
-<<[top](VRec.html)
+<<[top](VRec.md)
 # **MikeRecorder**
 namespace:VRec/class/継承:MonoBehaviour
 

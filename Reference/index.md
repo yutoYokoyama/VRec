@@ -22,7 +22,7 @@
 ---
 - [GitHub](https://github.com/yutoYokoyama/VRecLib)
     - ライブラリファイルなどのリソースファイルはこちら
-- [リファレンス](./vrec/Vrec.html)
+- [リファレンス](./vrec/Vrec.md)
     - 詳しい使い方などはこちら
 
 <br>

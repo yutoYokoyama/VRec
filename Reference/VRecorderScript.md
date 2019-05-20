@@ -1,4 +1,4 @@
-﻿<<[top](VRec.html)
+﻿<<[top](VRec.md)
 # **VRecorderScript**
 namespace:VRec/class/継承:MonoBehaviour
 
@@ -32,8 +32,8 @@ namespace:VRec/class/継承:MonoBehaviour
 
 |変数名|詳細|
 |:-----------|:------------|
-|_mike|マイクの録音を管理する。詳しくは[MikeRecorder](MikeRecorder.html)を参照|
-|_objs|それまで記録したすべての記録データのリスト。詳しくは[VRecRecordData](VRecRecordData.html)を参照|
+|_mike|マイクの録音を管理する。詳しくは[MikeRecorder](MikeRecorder.md)を参照|
+|_objs|それまで記録したすべての記録データのリスト。詳しくは[VRecRecordData](VRecRecordData.md)を参照|
 |||
 <br>
 
@@ -44,7 +44,7 @@ namespace:VRec/class/継承:MonoBehaviour
 |関数名|詳細|
 |:--|:--|
 |Initialize|フォルダの作成など、初期のイニシャライズを行う。StartRecordが呼ばれた際にも自動で実行される|
-|AddRecordObj|指定したオブジェクトを、記録方法を設定して記録対象に加える。詳しい設定については[ObjType](ObjType.html)を参照|
+|AddRecordObj|指定したオブジェクトを、記録方法を設定して記録対象に加える。詳しい設定については[ObjType](ObjType.md)を参照|
 |StartRecord|記録を開始する|
 |EndRecord|記録を終了する|
 |VoiceRecordSet|音声を記録する、あるいは記録しないと設定する|
@@ -52,6 +52,6 @@ namespace:VRec/class/継承:MonoBehaviour
 |ActivateRecordObj|DeActivateRecordObjで記録に反映されなくなったものを再び反映するようにする。オブジェクトを有効化すると自動的に呼ばれる|
 |RemoveRecordObj|対象を記録対象から取り除く。再び記録するにはAddRecordObjする必要がある|
 |VRecObjectSet|VRecを重ね取りする際に使うと便利な関数。詳しくは[VRecCommand](VRecCommand)を参照|
-|AddExRecord|利用者が独自のイベントを登録するための関数。詳しくは[ExRecord](ExRecord.html)を参照|
+|AddExRecord|利用者が独自のイベントを登録するための関数。詳しくは[ExRecord](ExRecord.md)を参照|
 |||
 <br>

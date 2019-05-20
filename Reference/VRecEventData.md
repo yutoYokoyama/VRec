@@ -1,4 +1,4 @@
-<<[top](VRec.html)
+<<[top](VRec.md)
 # VRecEventData
 namespace:VRec/class
 
@@ -11,7 +11,7 @@ namespace:VRec/class
 |:-|:-|
 |Label|string型のラベル。大抵の場合は対象オブジェクトの名前。TypeがOtherの場合は利用者の定義するイベントラベル|
 |ObjectId|int型のId。大抵の場合は対象オブジェクトのId|
-|Type|ObjType型の列挙型。[ObjType](ObjType.html)を参照|
+|Type|ObjType型の列挙型。[ObjType](ObjType.md)を参照|
 |FloatValues|float型の配列|
 |StrData|string型の配列|
 |||

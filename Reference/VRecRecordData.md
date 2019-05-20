@@ -1,4 +1,4 @@
-<<[top](VRec.html)
+<<[top](VRec.md)
 # **VRecRecordData**
 namespace:VRec
 
@@ -7,8 +7,8 @@ namespace:VRec
 <br>
 
 本ページでは、
-[VRecorderScript](VRecorderScript.html)
-と[VViewerScript](VViewerScript.html)で扱う記録・再生データであるVRecRecordDataについてと、それをバイト配列に変換した拡張子「.vrc」について解説します。
+[VRecorderScript](VRecorderScript.md)
+と[VViewerScript](VViewerScript.md)で扱う記録・再生データであるVRecRecordDataについてと、それをバイト配列に変換した拡張子「.vrc」について解説します。
 
 ## **VRecRecordDataについて**
 ---
@@ -57,4 +57,4 @@ VRecRecordData同様、バイト配列との相互変換を行えます。
 
 ## **VRecEventData**
 ---
-[VRecEventData](VRecEventData.html)を参照してください
+[VRecEventData](VRecEventData.md)を参照してください

@@ -1,4 +1,4 @@
-<<[top](VRec.html)
+<<[top](VRec.md)
 # **ExRecord**
 
 ## **説明**
@@ -59,9 +59,9 @@ string配列には、数値以外の必要なデータを設定する必要が�
 ## **再生時の操作**
 ---
 
-再生時には、delegateであるVViewer.[OtherObjectSetting](ObjectDataSettingHandler.html)を用いてイベントの再現を行います。<br>
+再生時には、delegateであるVViewer.[OtherObjectSetting](ObjectDataSettingHandler.md)を用いてイベントの再現を行います。<br>
 
-OtherObjectSettingは[VRecEventData](VRecEventData.html)を引数とし、これには記録時に登録したLabel、float配列、string配列が含まれています。<br>
+OtherObjectSettingは[VRecEventData](VRecEventData.md)を引数とし、これには記録時に登録したLabel、float配列、string配列が含まれています。<br>
 
 これらの値を利用し、イベントの再現を行います。<br>
 
@@ -117,4 +117,4 @@ void Handler(VRecEventData data){
 ```
 つまり、そのイベントの実行そのものを1つのメソッドにしておき、そのメソッドの実行前にAddExRecordを行い、再生時にはそのメソッドを実行する形にしておくのがよいでしょう。
 
-また、ここであげたことはその他の[ObjectDataSettingHandler](ObjectDataSettingHandler.html)や[VRecObjectSettingHandler](VRecObjectSettingHandler.html)などにも適応できます
+また、ここであげたことはその他の[ObjectDataSettingHandler](ObjectDataSettingHandler.md)や[VRecObjectSettingHandler](VRecObjectSettingHandler.md)などにも適応できます

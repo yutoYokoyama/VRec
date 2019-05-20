@@ -1,4 +1,4 @@
-<<[top](VRec.html)
+<<[top](VRec.md)
 # **VViewHandler**
 class VViewerScript/public delegate
 
@@ -6,7 +6,7 @@ class VViewerScript/public delegate
 ---
 <br>
 
-[VViewerScript](VViewerScript.html)内に存在するdelegate型<br>
+[VViewerScript](VViewerScript.md)内に存在するdelegate型<br>
 VViewerScript内にはOnStartHandlerとOnEndHandlerの2つが存在する。
 そのVViwerが開始するときと終了するときにそれぞれ呼ばれる。
 引数はそのVView自身のTransformとファイル名。

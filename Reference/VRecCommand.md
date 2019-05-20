@@ -1,4 +1,4 @@
-<<[top](VRec.html)
+<<[top](VRec.md)
 # **VRecCommand**
 namespace:VRec/enum
 
@@ -6,7 +6,7 @@ namespace:VRec/enum
 ---
 <br>
 
-記録するオブジェクトを、 [ObjType](ObjType.html) がVRecであるものについて、ユーザが発行できるコマンドの列挙型です。
+記録するオブジェクトを、 [ObjType](ObjType.md) がVRecであるものについて、ユーザが発行できるコマンドの列挙型です。
 利用者は特に気にする必要はなく、記録が始まる前に対象をAddRecordObjしておけば、自動的に再生・停止を記録します。
 
 事前にイニシャライズを済ませておきたい場合は、AddRecordObjのすぐあとに
