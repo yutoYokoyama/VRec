@@ -392,13 +392,41 @@ blockquote {
 <hr>
 <br>
 本ページはVRecに関するリファレンスとそのリソースを提供するページです。
+<p>VRecはVR利用者の行動を記録するためのライブラリです。<br>
+主にUnityで用いられることを想定しています。<br></p>
+<p>VR開発をする上で、このようなことに困ったことはありませんか？<br></p>
+<ul>
+<li>Clusterのアーカイブ機能のようなVR・ARアプリケーションの履歴機能を実装したい</li>
+<li>VR内で起こったことに対して統計処理・機械学習を行いたい</li>
+<li>VR関連の研究をやっていて、デモ動画をもっと簡単に作りたい</li>
+<li>VRでアニメーションを作りたいけど、役者が自分しかいない…</li>
+</ul>
+<p>これらの問題に対して是非VRecを使ってください。</p>
+<p>VR内の動きを記録する類似のものに、<a href="http://download.3divi.com/Nuitrack/doc/UnityMotionCapture_page.html">Nuitrack</a>や<a href="https://github.com/duo-inc/EasyMotionRecorder">EasyMotionRecorder</a>が存在しますが、これらとは大きく違います。<br></p>
+<ul>
+<li>UnityEditor以外でも動作<br>
+<ul>
+<li>既存のものはUnityEditor上でしか使えませんが、VRecはビルド後のアプリケーションでも使うことが出来ます。そのため、VR・ARなど3Dアプリケーションのためのアーカイブツールとして使うことが出来ます。<br>
+またVRecは独自のバイナリファイルを用いるため(つまりAnimationやAnimatorに依存していない)、Unityだけでなく他のプラットフォームでも利用することが可能です。<br></li>
+</ul>
+</li>
+<li>非アバターオブジェクトなど、Boneの使われていない3Dモデルにも利用可能<br>
+<ul>
+<li>記録ツールのほとんどはBone、特にHumanoidBoneに強く依存しています。そのため、それらのBoneが適応されていないただの3Dモデルの記録は不可能であることが多いです。また、VR空間内では音やエフェクトの発生など、モーション以外の出来事も発生します。<br>
+VRecはこれらの事象を記録するための機能・インターフェースを標準で備えています。もちろん、データ量としては増大しますが、より大きな利便性を確保しています。<br></li>
+</ul>
+</li>
+</ul>
+<video width="480" height="360" controls>
+  <source src="VRec紹介動画.mp4" type="video/mp4">
+</video>
 <h2 id="%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84"><strong>利用規約</strong></h2>
 <hr>
 <p>本大学および本研究室は，本サービスを利用することによって生じたいかなる損害・不利益等を補償しません．<br></p>
 <h2 id="%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D%E7%92%B0%E5%A2%83"><strong>動作確認環境</strong></h2>
 <hr>
 <ul>
-<li>Unity 5.6.3～2018.1
+<li>Unity 5.6.3～2018.2
 <ul>
 <li>.NET 3.5</li>
 </ul>
@@ -408,7 +436,7 @@ blockquote {
 <h2 id="%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%83%AA%E3%83%B3%E3%82%AF"><strong>リソースリンク</strong></h2>
 <hr>
 <ul>
-<li><a href="https://github.com/yutoYokoyama/VRecLib">GitHub</a>
+<li><a href="https://github.com/yutoYokoyama/VRec">GitHub</a>
 <ul>
 <li>ライブラリファイルなどのリソースファイルはこちら</li>
 </ul>
@@ -416,6 +444,11 @@ blockquote {
 <li><a href="./vrec/Vrec.html">リファレンス</a>
 <ul>
 <li>詳しい使い方などはこちら</li>
+</ul>
+</li>
+<li><a href="https://qiita.com/yuto_onizakura/items/20e6c55233de9049b6e0">Qita</a>
+<ul>
+<li>簡単な紹介ページ</li>
 </ul>
 </li>
 </ul>

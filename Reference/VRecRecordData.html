@@ -398,8 +398,9 @@ blockquote {
 <hr>
 <p>VRecRecordDataは、VRecFrameDataのリストを持つクラスです。</p>
 <p>データを削減するメソッドであるGetReducedDataと、Byteとの相互変換を行うToByte,FromByteメソッドを実装しています。</p>
-<p>Serializabledを設定しているため、UnityのJsonUtilityで変換可能ですが、JsonUtilityはデータの大きさに上限があるため注意してください。</p>
+<p>Serializabledを設定しているため、UnityのJsonUtilityで変換可能ですが、JsonUtilityは文字列の大きさに上限(1.5GB)があるため注意してください。</p>
 <h3 id="%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3"><strong>プロパティ</strong></h3>
+<hr>
 <table>
 <thead>
 <tr>
@@ -410,9 +411,19 @@ blockquote {
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left">Platform</td>
+<td style="text-align:left">PlatformVersion</td>
+<td style="text-align:left">プラットフォームの種類、座標系を示す列挙型。詳しくは<a href="#PlatformVersion">PlatformVersion</a></td>
+</tr>
+<tr>
 <td style="text-align:left">Records</td>
 <td style="text-align:left">List&lt;<a href="#VRecFrameData">VRecFrameData</a>&gt;</td>
 <td style="text-align:left">フレームごとのイベントの集合であるVRecFrameDataのリスト。つまり対象の全データ</td>
+</tr>
+<tr>
+<td style="text-align:left">ObjectDataes</td>
+<td style="text-align:left">List&lt; RecordObjectData&gt;</td>
+<td style="text-align:left">記録するオブジェクトに関するデータ</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
@@ -422,6 +433,7 @@ blockquote {
 </tbody>
 </table>
 <h3 id="%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89"><strong>メソッド</strong></h3>
+<hr>
 <table>
 <thead>
 <tr>
@@ -453,11 +465,48 @@ blockquote {
 </tr>
 </tbody>
 </table>
+<h2 id="platformversion">PlatformVersion</h2>
+<hr>
+<p>1byteで示されるプラットフォームの座標系を示す値。<br></p>
+<p>前から3bitがUnity座標系と比較して左右・上下・奥行き方向が逆転しているかどうかを示す。<br>
+0であれば反転しておらず、1であれば反転している。<br>
+後半5bitが単位系を示す。左から順にヤード、フィート、メートル、センチメートル、ミリメートルを示し、1が割り当てられている部分の単位が該当する。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">プラットフォーム</th>
+<th style="text-align:left">列挙値</th>
+<th style="text-align:left">bit値</th>
+<th style="text-align:left">解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Unity</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">000 00100</td>
+<td style="text-align:left">Unity座標系と一致し、長さの単位はメートル</td>
+</tr>
+<tr>
+<td style="text-align:left">UE4</td>
+<td style="text-align:left">130</td>
+<td style="text-align:left">100 00010</td>
+<td style="text-align:left">左右方向のみ反転し、長さの単位はcm</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>ここに記載がないものも、以上の決定規則に従います。</p>
 <h2 id="vrecframedata">VRecFrameData</h2>
 <hr>
 <p>VRecFrameDataはあるフレームにおけるVRecEventDataの集合と、それに付随する情報を管理するクラスです。つまり、1フレームの情報を扱います。<br>
 VRecRecordData同様、バイト配列との相互変換を行えます。</p>
-<h3 id="%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3"><strong>プロパティ</strong></h3>
+<h4 id="%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3"><strong>プロパティ</strong></h4>
 <table>
 <thead>
 <tr>
@@ -519,6 +568,15 @@ VRecRecordData同様、バイト配列との相互変換を行えます。</p>
 <h2 id="vreceventdata"><strong>VRecEventData</strong></h2>
 <hr>
 <p><a href="VRecEventData.html">VRecEventData</a>を参照してください</p>
+<h2 id="%E3%80%8Cvrc%E3%80%8D%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><strong>「.vrc」フォーマットについて</strong></h2>
+<hr>
+<p>「.vrc」はVRecRecordDataをバイナリファイルとして書きだしたものです。<br>
+全ての変数はビッグエンディアンであることに留意しておいてください。<br>
+以下にそのバイト構造を示します。</p>
+<p><img src="vrc1.png" alt="VRecRecord">
+<img src="vrc2.png" alt="VRecRecord">
+<img src="vrc3.png" alt="VRecRecord">
+<img src="vrc4.png" alt="VRecRecord"></p>
 
 </body>
 </html>
