@@ -18,7 +18,7 @@ public class VViewerScriptForIK : VViewerScript
                     ik.solver.spine.headTarget = new GameObject(data.Label + "_Head").transform;
                     ik.solver.spine.headTarget.parent = transform;
                 }
-                SetTransform(ik.solver.spine.headTarget, data.GetPosition(), data.GetEulerAngles());
+                SetTransform(ik.solver.spine.headTarget,  data.GetGlobalPosition(), data.GetGlobalQuaternion(),data.GetGlobalScale());
 
                 break;
             case "LeftHand":
@@ -27,7 +27,7 @@ public class VViewerScriptForIK : VViewerScript
                     ik.solver.leftArm.target = new GameObject(data.Label + "_LeftArm").transform;
                     ik.solver.leftArm.target.parent = transform;
                 }
-                SetTransform(ik.solver.leftArm.target, data.GetPosition(), data.GetEulerAngles());
+                SetTransform(ik.solver.leftArm.target,  data.GetGlobalPosition(), data.GetGlobalQuaternion(),data.GetGlobalScale());
                 break;
             case "RightHand":
                 if (!ik.solver.rightArm.target)
@@ -35,7 +35,7 @@ public class VViewerScriptForIK : VViewerScript
                     ik.solver.rightArm.target = new GameObject(data.Label + "_RightArm").transform;
                     ik.solver.rightArm.target.parent = transform;
                 }
-                SetTransform(ik.solver.rightArm.target, data.GetPosition(), data.GetEulerAngles());
+                SetTransform(ik.solver.rightArm.target,  data.GetGlobalPosition(), data.GetGlobalQuaternion(),data.GetGlobalScale());
 
 
                 break;
@@ -45,7 +45,7 @@ public class VViewerScriptForIK : VViewerScript
                     ik.solver.leftLeg.target = new GameObject(data.Label + "_LeftLeg").transform;
                     ik.solver.leftLeg.target.parent = transform;
                 }
-                SetTransform(ik.solver.leftLeg.target, data.GetPosition(), data.GetEulerAngles());
+                SetTransform(ik.solver.leftLeg.target,  data.GetGlobalPosition(), data.GetGlobalQuaternion(),data.GetGlobalScale());
 
                 break;
             case "RightLeg":
@@ -54,7 +54,7 @@ public class VViewerScriptForIK : VViewerScript
                     ik.solver.rightLeg.target = new GameObject(data.Label + "_RightLeg").transform;
                     ik.solver.rightLeg.target.parent = transform;
                 }
-                SetTransform(ik.solver.rightLeg.target, data.GetPosition(), data.GetEulerAngles());
+                SetTransform(ik.solver.rightLeg.target, data.GetGlobalPosition(), data.GetGlobalQuaternion(),data.GetGlobalScale());
                 break;
             case "Pelvis":
                 if (!ik.solver.spine.pelvisTarget)
@@ -62,7 +62,7 @@ public class VViewerScriptForIK : VViewerScript
                     ik.solver.spine.pelvisTarget = new GameObject(data.Label + "_Pelvis").transform;
                     ik.solver.spine.pelvisTarget.parent = transform;
                 }
-                SetTransform(ik.solver.spine.pelvisTarget, data.GetPosition(), data.GetEulerAngles());
+                SetTransform(ik.solver.spine.pelvisTarget,  data.GetGlobalPosition(), data.GetGlobalQuaternion(),data.GetGlobalScale());
                 break;
             case "RightFinger":
                 break;
@@ -71,8 +71,7 @@ public class VViewerScriptForIK : VViewerScript
             case "Root":
                 if(obj.Obj)
                 {
-                    SetTransform(obj.Obj,data.GetPosition(),data.GetEulerAngles());
-
+                    SetTransform(obj.Obj, data.GetGlobalPosition(), data.GetGlobalQuaternion(), data.GetGlobalScale());
                 }
                 break;
             default:
