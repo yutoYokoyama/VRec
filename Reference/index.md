@@ -1,66 +1,68 @@
-<<[長尾研ホームページトップへ](http://www.nagao.nuie.nagoya-u.ac.jp)
+<<[Nagao Lab homepage top](http://www.nagao.nuie.nagoya-u.ac.jp)
 # **VRecTop**
 
-長尾研究室 VRecProjectページへようこそ
+Welcome to Nagao Lab VRecProject page<br>
 
-## **説明**
+日本語のページは[こちら](./japanese/index.html)<br>
+
+## **Introduction**
 ---
 <br>
-本ページはVRecに関するリファレンスとそのリソースを提供するページです。
+This page provides a reference about VRec and its resources.
 
-VRecはVR利用者の行動を記録するためのライブラリです。<br>
-主にUnityで用いられることを想定しています。<br>
+VRec is a library for recording the actions of VR users. <br>
+It is mainly intended for use in Unity. <br>
 
-VR開発をする上で、このようなことに困ったことはありませんか？<br>
-- Clusterのアーカイブ機能のようなVR・ARアプリケーションの履歴機能を実装したい
-- VR内で起こったことに対して統計処理・機械学習を行いたい
-- VR関連の研究をやっていて、デモ動画をもっと簡単に作りたい
-- VRでアニメーションを作りたいけど、役者が自分しかいない…
+Have you ever had any problems with VR development? <br>
+- Implement history function of VR / AR application such as Archive function of [Cluster.](https://cluster.mu/en)
+- I want to do statistical processing and machine learning for what happened in VR
+- I'm doing VR related research and want to make demo videos more easily
+- I want to make an animation in VR, but only the actor is myself ...
 
-これらの問題に対して是非VRecを使ってください。
+Please use VRec for these problems.
 
-VR内の動きを記録する類似のものに、[Nuitrack](http://download.3divi.com/Nuitrack/doc/UnityMotionCapture_page.html)や[EasyMotionRecorder](https://github.com/duo-inc/EasyMotionRecorder)が存在しますが、これらとは大きく違います。<br>
+A similar thing that records movements in VR is [Nuitrack](http://download.3divi.com/Nuitrack/doc/UnityMotionCapture_page.html) which is very different.<br>
 
-- UnityEditor以外でも動作<br>
-    - 既存のものはUnityEditor上でしか使えませんが、VRecはビルド後のアプリケーションでも使うことが出来ます。そのため、VR・ARなど3Dアプリケーションのためのアーカイブツールとして使うことが出来ます。<br>
-またVRecは独自のバイナリファイルを用いるため(つまりAnimationやAnimatorに依存していない)、Unityだけでなく他のプラットフォームでも利用することが可能です。<br>
-- 非アバターオブジェクトなど、Boneの使われていない3Dモデルにも利用可能<br>
-    - 記録ツールのほとんどはBone、特にHumanoidBoneに強く依存しています。そのため、それらのBoneが適応されていないただの3Dモデルの記録は不可能であることが多いです。また、VR空間内では音やエフェクトの発生など、モーション以外の出来事も発生します。<br>
-    VRecはこれらの事象を記録するための機能・インターフェースを標準で備えています。もちろん、データ量としては増大しますが、より大きな利便性を確保しています。<br>
+Works other than UnityEditor <br>
+    - Existing ones can only be used in UnityEditor, but VRec can be used in post-build applications. Therefore, it can be used as an archive tool for 3D applications such as VR and AR. <br>
+VRec also uses its own binary file (ie, does not rely on Animation or Animator), so it can be used on other platforms than just Unity. <br>
+- Can be used for 3D models without Bone, such as non-avatar objects <br>
+    - Most recording tools rely heavily on bones, especially HumanoidBone. Therefore, it is often impossible to record just 3D models without those bones applied. In the VR space, events other than motion, such as sound and effects, also occur. <br>
+    VRec has functions and interfaces for recording these events as standard. Of course, the amount of data will increase, but it will provide greater convenience. <br>
 
 <video width="480" height="360" controls>
   <source src="VRec紹介動画.mp4" type="video/mp4">
 </video>
 
 
-## **利用規約**
+## **Terms of service**
 ---
-本大学および本研究室は，本サービスを利用することによって生じたいかなる損害・不利益等を補償しません．<br>
+Nagoya University and Nagao laboratory do not compensate for any damages or disadvantages caused by using this service.<br>
 
-## **動作確認環境**
+## **Environment**
 ---
 - Unity 5.6.3～2018.2
     - .NET 3.5
 - OS    Windows10
 
-## **リソースリンク**
+## **Link**
 ---
 - [GitHub](https://github.com/yutoYokoyama/VRec)
-    - ライブラリファイルなどのリソースファイルはこちら
-- [リファレンス](./VRec.md)
-    - 詳しい使い方などはこちら
+    - resource files such as library files
+- [Reference](./VRec.md)
+    - detailed usage
 - [Qita](https://qiita.com/yuto_onizakura/items/20e6c55233de9049b6e0)
-    - 簡単な紹介ページ
+    - simple introduction page (japanese)
 
 <br>
 
-## **連絡先**
+## **Contact**
 ---
-名古屋大学<br>
-情報学研究科<br>
-知能システム学専攻<br>
-長尾研究室所属<br>
-横山勇斗<br>
+Nagoya University <br>
+Graduate School of Informatics <br>
+Department of Intelligent Systems <br>
+Nagao Lab.<br>
+Yuto Yokoyama<br>
 yokoyama@nagao.nuie.nagoya-u.ac.jp<br>
 Twitter: [@yuto_onizakura](https://twitter.com/yuto_onizakura)<br>
 
