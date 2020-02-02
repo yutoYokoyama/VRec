@@ -1,52 +1,52 @@
 ﻿<<[top](./index.md)
 # **VRec**
 
-## **説明**
+## **Introduction**
 ---
 <br>
-VRecは3Dコンテンツの記録・再生を行うライブラリです。<br>
+VRec is a library for recording and playing back 3D content. <br>
 
-単純なアバターの動きの記録、再生を行うだけであれば、[VRecorderScript](VRecorderScript.md)と[VViewerScript](VViewerScript.md)のみを使えば実現できます。
+If you only want to record and play back simple avatar movements, [VRecorderScript](VRecorderScript.md) and [VViewerScript](VViewerScript.md) make it possible.<br>
 
-それ以上の、例えばテクスチャの変更やパーティクルの反映などの操作を記録する場合は、それ以外の、特に[ExRecord](ExRecord.md)のドキュメントを参照してください
+If you want to record more operations, such as changing textures or reflecting particles, please refer to the other documentation (especially [ExRecord](ExRecord.md ))<br>
 
-「.vrc」フォーマットのバイト形式などは[VRecRecordData](VRecRecordData.md)を参照してください
+Please refer to [VRecRecordData] (VRecRecordData.md) for the byte format of ".vrc" format.<br>
 
-わかりにくい場合は、twitter@[yuto_onizakura](https://twitter.com/yuto_onizakura)にて、リプライやDMでご質問ください。改善を行います
+If you want know more information, please ask @[yuto_onizakura](https://twitter.com/yuto_onizakura).<br>
 
-各機能については以下を参照してください
+Please Refer to the following for each component.<br>
+
 <br>
 
 ## **主な機能・コンポーネント**
 ---
 <br>
 
-- [VRecorderScript](VRecorderScript.md) 記録用コンポーネント
+- [VRecorderScript](VRecorderScript.md) Recording component
     - [MikeRecorder](MikeRecorder.md)
-        - マイクからの録音に関わる機能
-    - [VRecCommand](VRecCommand)
-        - VRecを重ね撮りする際に使うと便利なコマンド
-- [VViewerScript](VViewerScript.md)       再生用コンポーネント
+        - Component for recording with microphone
+- [VViewerScript](VViewerScript.md)    Playback component
     - [ObjectDataSettingHandler](ObjectDataSettingHandler.md)
     - [VRecObjectSettingHandler](VRecObjectSettingHandler.md)
-        - 上記2つとも、特定のObjectTypeの際に呼ばれるDelegate
+        - Delegate called for a specific ObjectType
     - [VViewerHandler](VViewerHandler.md)
-        - VViewerが開始、あるいは終了した際に呼ばれるDelegate
-- [ObjType](ObjType.md) VRecが記録する際の種別
-- [ExRecord](ExRecord.md) 独自の操作、イベントを登録・再生したい時に参照してください
-- [VRecFilePathHelper](VRecFilePathHelper.md)　ファイルパスに関するヘルパー
-- [VRecRecordData](VRecRecordData.md) VRec内で記録・再生されているデータ群に関する詳細、あるいは「.vrc」フォーマットのバイト形式などはこちらを参照してください
+        - Delegate called when VViewer starts or ends
+- [ObjType](ObjType.md) VRec record type
+- [ExRecord](ExRecord.md) Refer to when you want to register and play your own operations and events
+- [VRecFilePathHelper](VRecFilePathHelper.md)　Helpers for file paths
+- [VRecRecordData](VRecRecordData.md) details on the data group recorded / eeproduced in VRec or the byte format of ".vrc" format
 <br>
 
 
-## **連絡先**
+## **Contact**
 ---
-名古屋大学<br>
-情報学研究科<br>
-知能システム学専攻<br>
-長尾研究室所属<br>
-横山勇斗<br>
+Nagoya University <br>
+Graduate School of Informatics <br>
+Department of Intelligent Systems <br>
+Nagao Lab.<br>
+Yuto Yokoyama<br>
 yokoyama@nagao.nuie.nagoya-u.ac.jp<br>
 Twitter: [@yuto_onizakura](https://twitter.com/yuto_onizakura)<br>
+
 
 <br>

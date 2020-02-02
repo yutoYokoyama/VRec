@@ -1,57 +1,55 @@
 ﻿<<[top](VRec.md)
 # **VRecorderScript**
-namespace:VRec/class/継承:MonoBehaviour
+namespace:VRec/class/super class:MonoBehaviour
 
-## **説明**
+## **Introduction**
 ---
 <br>
-3Dコンテンツの記録を行う基本クラス、コンポーネント。
+Base component for recording 3D content.
 <br>
 
-## **Public変数**
+## **Public Variable**
 ---
 <br>
 
-|変数名|詳細|
+|variable names|details|
 |:-----------|:------------|
-|FileName|ファイル名|
-|IsRecordStarted|記録が開始したかどうか。読み取り専用|
-|IsRecordEnded|記録が終了したかどうか。読み取り専用|
-|RecordObjs|記録を行うオブジェクトのリスト。読み取り専用|
-|RecordingTime|記録が始まってから何秒経ったか。読み取り専用|
-|StartOnEditor|TrueにするとEditor上であれば記録を開始する。Update内でStartRecordを実行する|
-|EndOnEditor|TrueにするとEditor上であれば記録を終了する。Update内でEndRecordを実行する|
-|IsVoiceRecording|マイクからの録音を行っているか。読み取り専用|
-|AudioPositionId|再生時に、マイクの音声を追従させるオブジェクトのID。デフォルトでは動かない。読み取り専用|
+|FileName|file name|
+|IsRecordStarted|Whether the recording has started. Read only|
+|IsRecordEnded|Whether the recording has stopped. Read only|
+|RecordObjs|List of objects to record. Read only|
+|RecordingTime|How many seconds have passed since the recording began. Read only|
+|StartOnEditor|If set to True, recording starts on the Editor. Execute StartRecord in Update|
+|EndOnEditor|If set to True, recording ends on the Editor. Execute EndRecord in Update|
+|IsVoiceRecording|Whether the mike recording is running. Read Only|
 |||
 <br>
 
-## **Protected変数**
+## **Protected Variable**
 ---
 <br>
 
-|変数名|詳細|
+|variable names|details|
 |:-----------|:------------|
-|_mike|マイクの録音を管理する。詳しくは[MikeRecorder](MikeRecorder.md)を参照|
-|_objs|それまで記録したすべての記録データのリスト。詳しくは[VRecRecordData](VRecRecordData.md)を参照|
+|_mike|Manage mike recording。[MikeRecorder](MikeRecorder.md) for details|
+|_objs|List of all recorded data recorded. [VRecRecordData](VRecRecordData.md) for details|
 |||
 <br>
 
-## **Public関数**
+## **Public Function**
 ---
 <br>
 
-|関数名|詳細|
+|function names|details|
 |:--|:--|
-|Initialize|フォルダの作成など、初期のイニシャライズを行う。StartRecordが呼ばれた際にも自動で実行される|
-|AddRecordObj|指定したオブジェクトを、記録方法を設定して記録対象に加える。詳しい設定については[ObjType](ObjType.md)を参照|
-|StartRecord|記録を開始する|
-|EndRecord|記録を終了する|
-|VoiceRecordSet|音声を記録する、あるいは記録しないと設定する|
-|DeActivateRecordObj|登録されている記録対象を一時的に記録に反映させないようにする。オブジェクトを無効化すると自動的に呼ばれる|
-|ActivateRecordObj|DeActivateRecordObjで記録に反映されなくなったものを再び反映するようにする。オブジェクトを有効化すると自動的に呼ばれる|
-|RemoveRecordObj|対象を記録対象から取り除く。再び記録するにはAddRecordObjする必要がある|
-|VRecObjectSet|VRecを重ね取りする際に使うと便利な関数。詳しくは[VRecCommand](VRecCommand)を参照|
-|AddExRecord|利用者が独自のイベントを登録するための関数。詳しくは[ExRecord](ExRecord.md)を参照|
+|Initialize|Initialize, such as creating a folder. Automatically executed when StartRecord is called|
+|AddRecordObj|Add the specified object to the recording target.(it's need object type. [ObjType](ObjType.md) for details)|
+|StartRecord|Start Record|
+|EndRecord|End Record(Not Stop, cannot restart)|
+|VoiceRecordSet|Set mike record on/off|
+|DeActivateRecordObj|Temporarily exclude specified objects from recording.it's called automatically when the object is invalidated|
+|ActivateRecordObj|Make deactivated object recording target.it's called automatically when the object is activated|
+|RemoveRecordObj|remove the object from recording target|
+|AddExRecord|Function for the user to register their own event. [ExRecord](ExRecord.md) for details|
 |||
 <br>

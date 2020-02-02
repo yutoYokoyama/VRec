@@ -1,69 +1,68 @@
 ﻿<<[top](VRec.md)
 # VViewerScript
-namespace:VRec/class/継承:MonoBehaviour
+namespace:VRec/class/super class:MonoBehaviour
 
-## **説明**
+## **Introduction**
 ---
 <br>
-3Dコンテンツの再生を行う基本クラス、コンポーネント。
+Base component for replaying 3D content.
 <br>
 
-## **Public変数**
+## **Public Variazble**
 ---
 <br>
 
-|変数名|詳細|
+|variable names|details|
 |:-----------|:------------|
-|FileName|ファイル名|
-|ViewStarted|再生が開始したかどうか。読み取り専用|
-|ViewObjs|再生時に操作されるオブジェクト群のリスト。読み取り専用|
-|Objs|読み込んだ全ての再生用のデータ。読み取り専用。詳しくは[VRecRecordData](VRecRecordData.md)を参照|
-|IsLoop|ループするか否か|
-|ViewingTime|再生が始まってから何秒経ったか。読み取り専用|
-|ViewIndex|再生されているデータのIndex。読み取り専用|
-|VoicePlayer|マイクで録音したAudioClipが再生されているAudioSource。読み取り専用|
-|StartOnEditor|TrueにするとEditor上であれば再生を開始する。Update内でStartViewを実行する|
-|EndOnEditor|TrueにするとEditor上であれば記録を終了する。Update内でEndViewを実行する|
+|FileName|file name|
+|ViewStarted|Whether replaying started.Read Only|
+|ViewObjs|List of replaying objects .Read Only|
+|Objs|All read data for playback. Read Only. [VRecRecordData](VRecRecordData.md) for details|
+|IsLoop|loop function is on/off|
+|ViewingTime|How many seconds have passed since started. Read Only|
+|ViewIndex|Index of the data being played. Read Only|
+|VoicePlayer|AudioSource where the AudioClip recorded by the microphone is playing. Read Only|
+|StartOnEditor|If set to True, replaying starts on the Editor. Execute StartView in Update.|
+|EndOnEditor|If set to True, replaying stops on the Editor. Execute StopView in Update|
 |||
 <br>
 
-## **Protected変数**
+## **Protected Variable**
 <br>
 
-|変数名|詳細|
+|variable names|details|
 |:-----------|:------------|
-|_initialized|初期化が完了しているかどうか|
-|_viewObjectList|再生するオブジェクトのリスト|
+|_initialized|initialization finished or not|
+|_viewObjectList|replaying object list|
 |||
 
-## **Publicなデリゲート**
+## **Public Delegate**
 <br>
 
-|変数名|詳細|
+|variable names|details|
 |:-----------|:------------|
-|OtherObjectSetting|ObjTypeがOtherのときに呼ばれるDelegate。引数は[VRecEventData](VRecEventData.md)のみ|
-|VRecHandler|ObjTypeがVRecのときに呼ばれるDelegate。引数はVRecEventDataのみ|
-|ActivateHandler|ObjTypeがActivateSetのときに呼ばれるDelegate。引数はVRecEventDataのみ|
-|AudioHandler|ObjTypeがAudioのときに呼ばれるDelegate。引数はVRecEventDataのみ|
-|上記のDelegateに関しての詳細は[ObjectDataSettingHandler](ObjectDataSettingHandler.md)を参照||
-|AvatarDataHandler|ObjTypeがAvatarのときに呼ばれるDelegate。引数はVRecEventDataと、対象のオブジェクト|
-|ModelDataHandler|ObjTypeがModelのときに呼ばれるDelegate。引数はVRecEventDataと、対象のオブジェクト|
-|StaticHandler|ObjTypeがStaticObjectのときに呼ばれるDelegate。引数はVRecEventDataと、対象のオブジェクト|
-|上記のDelegateに関しての詳細は[VRecObjectSettingHandler](VRecObjectSettingHandler.md)を参照||
-|OnStartHandler|再生が開始したときに呼ばれるDelegate。引数は、VViewerScriptを持つTransformと再生するファイル名|
-|OnEndHandler|再生が終端まで到達したときに呼ばれるDelegate。引数は、VViewerScriptを持つTransformと再生するファイル名|
-|上記のDelegateに関しての詳細は[VViewerHandler](VViewerHandler.md)を参照||
+|OtherObjectSetting|Delegate called when [ObjType](ObjType.md) is Other|
+|ActivateHandler|Delegate called when [ObjType](ObjType.md) is ActiveSet|
+|AudioHandler|Delegate called when [ObjType](ObjType.md) is AudioSetting|
+|The above three delegate's infomation is [ObjectDataSettingHandler](ObjectDataSettingHandler.md)||
+|AvatarDataHandler|Delegate called when [ObjType](ObjType.md) is Avatar|
+|ModelDataHandler|Delegate called when [ObjType](ObjType.md) is 3DModel|
+|StaticHandler|Delegate called when [ObjType](ObjType.md) is StaticObject|
+|The above three delegate's infomation is [VRecObjectSettingHandler](VRecObjectSettingHandler.md)||
+|OnStartHandler|Delegate called when replaying started|
+|OnEndHandler|Delegatet called when replaying end(not "stop". when reached end of recorded data)|
+|The above two delegate's infomation is[VViewerHandler](VViewerHandler.md)||
 |||
 <br>
 
 
-## **Public関数**
+## **Public Function**
 <br>
 
-|関数名|詳細|
+|function names|details|
 |:-----------|:------------|
-|Initialize|FileNameを元に初期化処理を行う|
-|DataReset|初期化処理を行った内容を破棄する|
-|StartView|再生を開始する|
-|StopView|再生を停止する。停止後もStartViewを使えば再開される|
+|Initialize|initialize|
+|DataReset|remove initialized data|
+|StartView|start replaying|
+|StopView|stop replaying(not "end". it can restart by StartView)|
 |||

@@ -47,7 +47,7 @@ VR内の動きを記録する類似のものに、[Nuitrack](http://download.3di
 ---
 - [GitHub](https://github.com/yutoYokoyama/VRec)
     - ライブラリファイルなどのリソースファイルはこちら
-- [リファレンス](./VRec_ja.md)
+- [リファレンス](./VRec.md)
     - 詳しい使い方などはこちら
 - [Qita](https://qiita.com/yuto_onizakura/items/20e6c55233de9049b6e0)
     - 簡単な紹介ページ
