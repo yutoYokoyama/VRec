@@ -2,89 +2,80 @@
 # **VRecRecordData**
 namespace:VRec
 
-## **説明**
+## **Introduction**
 ---
 <br>
 
-本ページでは、
-[VRecorderScript](VRecorderScript.md)
-と[VViewerScript](VViewerScript.md)で扱う記録・再生データであるVRecRecordDataについてと、それをバイト配列に変換した拡張子「.vrc」について解説します。
+This page eaplain about VRecRecordData, which is recording / playback data, and the extension ".vrc" converted to a byte array
+They are used by [VRecorderScript](VRecorderScript.md) and [VViewerScript](VViewerScript.md).
 
-## **VRecRecordDataについて**
+## **About VRecRecordData**
 ---
 
-VRecRecordDataは、VRecFrameDataのリストを持つクラスです。
+VRecRecordData is a class that has a list of VRecFrameData.
 
-データを削減するメソッドであるGetReducedDataと、Byteとの相互変換を行うToByte,FromByteメソッドを実装しています。
+It has implements GetReducedData, a method to reduce data, and ToByte, FromByte methods to convert between Bytes.
 
-Serializabledを設定しているため、UnityのJsonUtilityで変換可能ですが、JsonUtilityは文字列の大きさに上限(1.5GB)があるため注意してください。
+Since Serializabled is set, it can be converted with Unity's JsonUtility, but please note that JsonUtility has an upper limit (1.5 GB) in the size of the character string.
 
-### **プロパティ**
+### **Property**
 ---
-|名前|型|解説|
+|name|class|details|
 |:--|:--|:--|
-|Platform|PlatformVersion|プラットフォームの種類、座標系を示す列挙型。詳しくは[PlatformVersion](#PlatformVersion)|
-|Records|List<[VRecFrameData](#VRecFrameData)>|フレームごとのイベントの集合であるVRecFrameDataのリスト。つまり対象の全データ|
-|ObjectDataes|List< RecordObjectData>|記録するオブジェクトに関するデータ|
+|Platform|PlatformVersion|Enumeration indicating platform type and coordinate system. See [PlatformVersion](PlatformVersion)|
+|Records|List<[VRecFrameData](#VRecFrameData)>|A list of VRecFrameData, which is a set of events for each frame. In other words, all data of the target|
+|ObjectDataes|List< RecordObjectData>|Data about the object to be recorded|
 ||||
 
-### **メソッド**
+### **Method**
 ---
-|名前|戻り値|解説|
+|name|Return value|details|
 |:--|:--|:--|
-|GetReducedData|VRecRecordData|各フレームを比較し、前フレームと比較して座標の変わっていないオブジェクトがあればデータを圧縮する。経験的にはおよそ20％程度に圧縮できる|
-|FromByte|VRecRecordData|バイト配列を引数としてデータを変換する|
-|ToByte|byte[]|自身をバイト配列に変換する|
+|GetReducedData|VRecRecordData|Each frame is compared, and if there is an object whose coordinates have not changed compared with the previous frame, the data is compressed. Empirically, it can be compressed to about 20%|
+|FromByte|VRecRecordData|Convert data using byte array as an argument|
+|ToByte|byte[]|Convert itself to a byte array|
 ||||
 
 ## PlatformVersion
 ---
-1byteで示されるプラットフォームの座標系を示す値。<br>
+Value indicating the platform coordinate system indicated by 1 byte. <br>
 
-前から3bitがUnity座標系と比較して左右・上下・奥行き方向が逆転しているかどうかを示す。<br>
-0であれば反転しておらず、1であれば反転している。<br>
-後半5bitが単位系を示す。左から順にヤード、フィート、メートル、センチメートル、ミリメートルを示し、1が割り当てられている部分の単位が該当する。
+The 3 bits from the front indicate whether the left-right, up-down, and depth directions are reversed compared to the Unity coordinate system. <br>
+If it is 0, it is not inverted, and if it is 1, it is inverted. <br>
+The latter 5 bits indicate the unit system. It indicates yards, feet, meters, centimeters, and millimeters in order from the left, and the unit to which 1 is assigned corresponds.
 
-|プラットフォーム|列挙値|bit値|解説|
+|Platform|enum value|bit value|details|
 |:--|:--|:--|:--|
-|Unity|4|000 00100|Unity座標系と一致し、長さの単位はメートル|
-|UE4|130|100 00010|左右方向のみ反転し、長さの単位はcm|
+|Unity|4|000 00100|Consistent with Unity coordinate system, units of length are meters|
+|UE4|130|100 00010|Only the left-right direction is reversed, the unit of length is cm|
 |||||
 
-ここに記載がないものも、以上の決定規則に従います。
+Anything not mentioned here is subject to the above rules.
 
 
 ## VRecFrameData
 ---
-VRecFrameDataはあるフレームにおけるVRecEventDataの集合と、それに付随する情報を管理するクラスです。つまり、1フレームの情報を扱います。<br>
-VRecRecordData同様、バイト配列との相互変換を行えます。
+VRecFrameData is a class that manages a set of VRecEventData in a certain frame and information associated with it. In other words, it handles one frame of information. <br>
+As with VRecRecordData, conversion between byte arrays can be performed.
 
-#### **プロパティ**
-|名前|型|解説|
+#### **Property**
+|name|class|details|
 |:--|:--|:--|
-|Events|List<[VRecEventData](#VRecEventData)>|そのフレームに起こるイベントの集合。つまり毎フレームごとのイベント群|
-|Displayed|bool|そのフレームが反映されたかどうか|
-|Time|float|そのフレームが再生開始から何秒目にあたるかの秒数|
+|Events|List<[VRecEventData](#VRecEventData)>|The set of events that occur in that frame. In other words, an event group for each frame|
+|Displayed|bool|Whether the frame was replay|
+|Time|float|The number of seconds from the start of playback that frame|
 ||||
-
-### **メソッド**
-
-|名前|戻り値|解説|
-|:--|:--|:--|
-|FromByte|VRecFrameData|バイト配列から変換してVRecFrameDataを生成する|
-|ToByte|byte[]|VRecFrameDataをバイト配列に変換する|
-|
 
 ## **VRecEventData**
 ---
-[VRecEventData](VRecEventData.md)を参照してください
+See [VRecEventData] (VRecEventData.md)
 
-## **「.vrc」フォーマットについて**
+## **「.vrc」**
 ---
 
-「.vrc」はVRecRecordDataをバイナリファイルとして書きだしたものです。<br>
-全ての変数はビッグエンディアンであることに留意しておいてください。<br>
-以下にそのバイト構造を示します。
+".Vrc" is VRecRecordData written as a binary file. <br>
+Keep in mind that all variables are big endian. <br>
+The following shows the byte structure.
 
 ![VRecRecord](vrc1.png)
 ![VRecRecord](vrc2.png)

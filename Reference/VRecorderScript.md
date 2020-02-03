@@ -45,7 +45,7 @@ Base component for recording 3D content.
 |Initialize|Initialize, such as creating a folder. Automatically executed when StartRecord is called|
 |AddRecordObj|Add the specified object to the recording target.(it's need object type. [ObjType](ObjType.md) for details)|
 |StartRecord|Start Record|
-|EndRecord|End Record(Not Stop, cannot restart)|
+|EndRecord|End Record(not "stop". cannot restart)|
 |VoiceRecordSet|Set mike record on/off|
 |DeActivateRecordObj|Temporarily exclude specified objects from recording.it's called automatically when the object is invalidated|
 |ActivateRecordObj|Make deactivated object recording target.it's called automatically when the object is activated|
