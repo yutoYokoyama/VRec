@@ -64,4 +64,7 @@ VR内の動きを記録する類似のものに、[Nuitrack](http://download.3di
 yokoyama@nagao.nuie.nagoya-u.ac.jp<br>
 Twitter: [@yuto_onizakura](https://twitter.com/yuto_onizakura)<br>
 
+
+Copyright © 2017-2020 Nagao Laboratory of Nagoya Univerisity.
+All Rights Reserved.
 <br>

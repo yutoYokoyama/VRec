@@ -66,4 +66,7 @@ Yuto Yokoyama<br>
 yokoyama@nagao.nuie.nagoya-u.ac.jp<br>
 Twitter: [@yuto_onizakura](https://twitter.com/yuto_onizakura)<br>
 
+
+Copyright © 2017-2020 Nagao Laboratory of Nagoya Univerisity.
+All Rights Reserved.
 <br>
