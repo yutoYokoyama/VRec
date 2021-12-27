@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using VRM;
+using UnityEngine;
 
 namespace VRec.Extensions
 {
-    public class VRecorderForVRM : VRec.VRecorderScript
+    public class VRecorderForVRM : MonoBehaviour
     {
+        public VRecorderScript VRec;
         private void Start()
         {
-            AvatarRecordHandler += GetBlendShapes;
+            if (!VRec)
+            {
+                VRec = GetComponent<VRecorderScript>();
+            }
+            VRec.AvatarRecordHandler += GetBlendShapes;
+
         }
 
         private VRecEventData[] GetBlendShapes(VRecRecordObj obj)
@@ -25,9 +32,9 @@ namespace VRec.Extensions
             if (blends != null)
             {
                 var blendValues = new List<float>();
-                foreach (BlendShapePreset t in Enum.GetValues(typeof(BlendShapePreset)))
+                foreach (BlendShapePreset key in Enum.GetValues(typeof(BlendShapePreset)))
                 {
-                    var blendValue = blends.GetValue(t);
+                    var blendValue = blends.GetValue(BlendShapeKey.CreateFromPreset(key));
                     blendValues.Add(blendValue);
                 }
                 data.FloatValues = blendValues.ToArray();

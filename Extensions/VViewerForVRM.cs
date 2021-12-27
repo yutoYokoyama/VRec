@@ -1,14 +1,19 @@
 ﻿using System;
 using VRM;
+using UnityEngine;
 namespace VRec.Extensions
 {
-    public class VViewerForVRM : VRec.VViewerScript
+    public class VViewerForVRM : MonoBehaviour
     {
-
+        public VViewerScript VViewer;
         // Use this for initialization
         void Start()
         {
-            AvatarDataHandler += BlendShapeSetting;
+            if (!VViewer)
+            {
+                VViewer = GetComponent<VViewerScript>();
+            }
+            VViewer.AvatarDataHandler += BlendShapeSetting;
         }
 
         private void BlendShapeSetting(VRecRecordObj obj, VRecEventData data)
@@ -21,9 +26,9 @@ namespace VRec.Extensions
                     return;
                 }
                 var blendNumber = 0;
-                foreach (BlendShapePreset t in Enum.GetValues(typeof(BlendShapePreset)))
+                foreach (BlendShapePreset key in Enum.GetValues(typeof(BlendShapePreset)))
                 {
-                    blend.SetValue(t, data.FloatValues[blendNumber]);
+                    blend.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(key), data.FloatValues[blendNumber]);
                     blendNumber++;
                 }
             }
